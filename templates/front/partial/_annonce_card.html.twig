@@ -1,0 +1,22 @@
+{% extends 'front/base.html.twig' %}
+
+{% block body %}
+    <div class="card-container col-4">
+        <div class="card">
+            <h2> {{ annonce.model.name }}</h2>
+            <div class="card-annonce-container">
+                <a href="{{ path('app_front_listing_show', { 'id': annonce.id }) }}">
+                    <img src="{{ annonce.image }}">
+                </a>
+            </div>
+
+            <p>Marque : {{ annonce.model.brand.name }}</p>
+            <p>Modèle : {{ annonce.model.name }}</p>
+            <p>Prix : {{ annonce.price / 100 }} €</p>
+            <p>Année de sortie : {{ annonce.producedYear }}</p>
+            <p>Kilométrage : {{ annonce.mileage }} km</p>
+
+            <p>Date de création : {{ annonce.createdAt|date('d/m/Y') }}</p>
+        </div>
+    </div>
+{% endblock %}

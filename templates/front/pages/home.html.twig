@@ -1,0 +1,30 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title %}
+    la centra-fake
+{% endblock %}
+
+{% block leogout_seo %}
+    <meta name="description"
+          content="lacentrafake.com : Achat en ligne de voitures ">
+{% endblock %}
+
+{% block body %}
+
+    {% include 'front/partial/_flashes.html.twig' %}
+
+    <h1 class="text-center"> la centra_fake</h1>
+
+    <h2 class="mt-5 mb-4">{{ 'pages.home.title.annonce'|trans }}</h2>
+
+    <div class="row">
+        {% for annonce in annonces %}
+            {% include 'front/partial/_annonce_card.html.twig' with
+                {
+                    'annonce': annonce,
+                }
+            %}
+        {% endfor %}
+    </div>
+ <a href="{{ path('app_front_listing_add') }}"> <i class="fa-address-card" > </i> ajoutez une annonce</a>
+{% endblock %}

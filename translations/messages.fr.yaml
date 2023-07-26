@@ -1,0 +1,9 @@
+
+pages:
+  home:
+    title:
+      annonce: 'Nos voitures '
+form:
+  listing:
+    name:
+      label: 'titre de la voiture'

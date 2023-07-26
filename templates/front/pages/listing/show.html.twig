@@ -1,0 +1,20 @@
+{% extends 'front/base.html.twig' %}
+
+
+{% block title %}
+    {{ listing.title }}
+{% endblock %}
+
+{% block body %}
+    <h1>Modèle : {{ listing.model.name }}</h1>
+
+    <p>Marque : {{ listing.model.brand.name }}</p>
+    <p>Modèle : {{ listing.model.name }}</p>
+    <p>Prix : {{ listing.price / 100 }} €</p>
+    <p>Année de sortie : {{ listing.producedYear }}</p>
+    <p>Kilométrage : {{ listing.mileage }} km</p>
+    <img src="{{ listing.image }}" alt="{{ listing.title }}" />
+    <p>Date de création : {{ listing.createdAt|date('d/m/Y') }}</p>
+    <p>Title: {{ listing.title }}</p>
+    <p>Description: {{ listing.description }}</p>
+{% endblock %}
